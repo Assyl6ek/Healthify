@@ -1,0 +1,75 @@
+[
+  {
+      "id": "1",
+      "city": "Almaty",
+      "category": "Терапевт",
+      "name": "Хадидоллова Медина Карпушевна",
+      "experience": "20",
+      "price": "20 300",
+      "image": "assets/img/1.jpg"
+  },
+  {
+      "id": "2",
+      "city": "Astana",
+      "category": "Стоматолог",
+      "name": "Хасид Иван Маркович",
+      "experience": "13",
+      "price": "7 300",
+      "image": "assets/img/2.png"
+  },
+  {
+      "id": "3",
+      "city": "Astana",
+      "category": "Терапевт",
+      "name": "Чан Ван Дам",
+      "experience": "23",
+      "price": "22 100",
+      "image": "assets/img/3.jpg"
+  },
+  {
+      "id": "4",
+      "city": "Almaty",
+      "category": "Стоматолог",
+      "name": "Ирмискалиева Дарья Малюскова",
+      "experience": "21",
+      "price": "2 000",
+      "image": "assets/img/4.png"
+  },
+
+  {
+      "id": "5",
+      "city": "Shymkent",
+      "category": "Акушер",
+      "name": "Потапов Владимир Валерьевич",
+      "experience": "18",
+      "price": "9 300",
+      "image": "assets/img/5.webp"
+  },
+  {
+      "id": "6",
+      "city": "Almaty",
+      "category": "Артролог",
+      "name": "Доронин Илларион Станиславович",
+      "experience": "16",
+      "price": "17 400",
+      "image": "assets/img/6.jpg"
+  },
+  {
+      "id": "7",
+      "city": "Almaty",
+      "category": "Артролог",
+      "name": "Карпов Наум Яковлевич",
+      "experience": "28",
+      "price": "13 440",
+      "image": "assets/img/7.jpg"
+  },
+  {
+      "id": "8",
+      "city": "Almaty",
+      "category": "Стоматолог",
+      "name": "Борисов Исак Агафонович",
+      "experience": "30",
+      "price": "30 940",
+      "image": "assets/img/8.png"
+  }
+]

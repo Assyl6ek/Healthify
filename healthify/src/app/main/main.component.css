@@ -1,0 +1,30 @@
+.main {
+  background: #F0F1FA;
+  padding: 2rem 15rem;
+}
+.main_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.main_labels {
+  display: grid;
+  grid-template-columns: 90px 4fr 1fr 1fr 1fr;
+  margin-top: 2rem;
+  padding: 0 3rem 0 0.5rem;
+  grid-gap: 2rem;
+  color: #5c5c5c;
+  font-size: 14px;
+}
+@media (max-width: 1200px) {
+  .main {
+      padding: 2rem 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .main_title {
+      padding-bottom: 1rem;
+  }
+  .main_labels {
+      display: none;
+  }
+}

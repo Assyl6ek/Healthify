@@ -1,0 +1,15 @@
+<div class="main">
+  <div class="main_title">List of best doctors</div>
+  <div class="main_labels">
+      <p>Doctor</p>
+      <p>Name</p>
+      <p>Experience</p>
+      <p>Specialty</p>
+      <p>Price</p>
+  </div>
+  <div class="main_list">
+      <div *ngFor="let doctor of doctorsList">
+          <app-doc-card [doctor]="doctor"></app-doc-card>
+      </div>
+  </div>
+</div>
