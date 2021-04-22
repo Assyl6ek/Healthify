@@ -1,1 +1,21 @@
-<p>assorted-doctors-list works!</p>
+<div class="dcl">
+  <div *ngIf="doctors?.length > 0">
+      <div class="dcl_title">{{title}}</div>
+      <div class="dcl_labels">
+          <p>Doctor</p>
+          <p>Name</p>
+          <p>Experience</p>
+          <p>Specialty</p>
+          <p>Price</p>
+      </div>
+  </div>
+  <div *ngIf="doctors?.length == 0">
+      <div class="nothing-found">
+          <img src="assets/img/sorry.svg" alt="">
+      <p>sorry, nothing found</p>
+      </div>
+  </div>
+  <div *ngFor="let d of doctors">
+      <app-doc-card [doctor]="d"></app-doc-card>
+  </div>
+</div>

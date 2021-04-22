@@ -1,17 +1,23 @@
 <div class="search">
   <mat-form-field>
     <mat-label>Select Doctor</mat-label>
-    <mat-select (selectionChange)="($event)">
-
+    <mat-select (selectionChange)="selectedCategory($event)">
+      <mat-option [value]="'all'">Все</mat-option>
+      <mat-option *ngFor="let d of doctorCategory" [value]="d.category">
+        {{d.category}}
+      </mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field>
     <mat-label>City</mat-label>
-    <mat-select (selectionChange)="($event)">
-
+    <mat-select (selectionChange)="selectedCity($event)">
+      <mat-option [value]="'all'">Все</mat-option>
+      <mat-option *ngFor="let d of doctorCity" [value]="d.city">
+        {{d.city}}
+      </mat-option>
     </mat-select>
   </mat-form-field>
   <div class="search_button">
-    <button mat-flat-button color="primary">Search</button>
+    <button mat-flat-button color="primary" (click)="onChangePath()">Search</button>
   </div>
 </div>

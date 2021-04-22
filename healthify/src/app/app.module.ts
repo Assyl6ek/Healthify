@@ -17,7 +17,8 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
-import { AssortedDoctorsListComponent } from './assorted-doctors-list/assorted-doctors-list.component'
+import { AssortedDoctorsListComponent } from './assorted-doctors-list/assorted-doctors-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { AssortedDoctorsListComponent } from './assorted-doctors-list/assorted-d
     MatDatepickerModule,
     MatFormFieldModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
 
   ],
   providers: [

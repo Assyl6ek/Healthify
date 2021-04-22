@@ -1,0 +1,31 @@
+.dcl {
+  background: #F0F1FA;
+  padding: 2rem 15rem;
+  min-height: 70vh;
+}
+.dcl_title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.dcl_labels {
+  display: grid;
+  grid-template-columns: 90px 4fr 1fr 1fr 1fr;
+  margin-top: 2rem;
+  padding: 0 3rem 0 0.5rem;
+  grid-gap: 2rem;
+  color: #5c5c5c;
+  font-size: 14px;
+}
+.nothing-found {
+  font-size: 24px;
+  color: #5c5c5c;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  grid-gap: 1rem;
+}
+.nothing-found img {
+  height: 150px;
+  opacity: 0.5;
+}
