@@ -1,0 +1,59 @@
+.li {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+    top: 0;
+    left: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10rem;
+}
+.li_login__title {
+    padding-bottom: 1rem;
+    font-size: 24px;
+    font-weight: bold;
+}
+.li_login form{
+    padding-left: 15rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+.li_login__submit {
+    display: grid;
+}
+.li_login__submit button {
+    padding: 0 3rem;
+    margin-top: 1rem;
+    font-weight: bold;
+    background: #F20732;
+    font-size: 18px;
+}
+.li_signup form{
+    padding-right: 15rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+.li_signup__submit {
+    display: grid;
+}
+.li_signup__submit button {
+    border: none;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+}
+@media (max-width: 1000px) {
+    .li {
+        grid-template-columns: 1fr;
+        padding: 10rem 0;
+    }
+    .li_signup form{
+        padding: 2rem;
+    }
+    .li_login form{
+        padding: 2rem;
+    }
+}

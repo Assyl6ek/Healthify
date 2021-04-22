@@ -1,1 +1,40 @@
-<p>doctor-proper-details works!</p>
+<div class="dpd">
+    <div class="dpd_title">{{doctor.category}}</div>
+    <div class="dpd_labels">
+        <p>Doctor</p>
+        <p>Name</p>
+        <p>Experience</p>
+        <p>Specialty</p>
+        <p>Price</p>
+    </div>
+    <app-doc-card [doctor]="doctor"></app-doc-card>
+    <div class="dpd_info">
+        <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Имя</mat-label>
+                <input matInput value="UserName" name="name" [(ngModel)]="userModel.name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Фамилия</mat-label>
+                <input matInput value="UserSurname" name="surname"[(ngModel)]="userModel.surname">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Номер телефона</mat-label>
+                <input matInput placeholder="+7 700 777 70 70" name="phone" [(ngModel)]="userModel.phone">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Выбор даты</mat-label>
+                <input matInput [matDatepicker]="myDatepicker" name="date" [(ngModel)]="userModel.date">
+                <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #myDatepicker></mat-datepicker>
+            </mat-form-field>
+            <div class="dpd_submit">
+                <button mat-flat-button color="primary" >Записаться</button>
+            </div>
+        </form>
+        <!-- <div class="dpd_toggle" *ngIf="toggle == true"> -->
+            <!-- Спасиибо за запись! С вами скоро свяжутся 3 -->
+        <!-- </div> -->   
+    </div>
+</div>
+

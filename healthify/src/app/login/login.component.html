@@ -1,1 +1,49 @@
-<p>login works!</p>
+<div class="li">
+    <div class="li_login">
+        <form #userForm="ngForm">
+            <div class="li_login__title">Log in</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" name="email" [(ngModel)]="userLoginModel.email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Пароль</mat-label>
+                <input matInput type="password" name="password" [(ngModel)]="userLoginModel.password">
+            </mat-form-field>
+            <div class="li_login__submit">
+                <button mat-flat-button color="primary" (click)="onLogin()">Войти</button>
+            </div>
+        </form>
+    </div>
+    <div class="li_signup">
+        <form #userSignUpForm="ngForm">
+            <div class="li_login__title">Sing up</div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Имя</mat-label>
+                <input matInput type="email" name="name" [(ngModel)]="userRegisterModel.name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Фамилия</mat-label>
+                <input matInput type="email" name="surname" [(ngModel)]="userRegisterModel.surname">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" name="email" [(ngModel)]="userRegisterModel.email">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Пароль</mat-label>
+                <input matInput type="password" name="password" [(ngModel)]="userRegisterModel.password">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Подтвердить пароль</mat-label>
+                <input matInput type="password" name="password" [(ngModel)]="password2">
+            </mat-form-field>
+            <div class="li_signup__submit">
+                <button mat-flat-button color="primary" (click)="onRegister()">Зарегаться</button>
+            </div>
+            <div *ngFor='let e of registerErrors'>
+                {{ e }}
+            </div>
+        </form>
+    </div>
+</div>

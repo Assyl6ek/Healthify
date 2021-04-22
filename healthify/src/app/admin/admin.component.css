@@ -1,0 +1,33 @@
+.admin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #fff;
+}
+form {
+    display: grid;
+    padding: 3rem;
+}
+.input {
+    display: grid;
+}
+.label {
+    font-size: 12px;
+}
+button {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+@media (max-width: 430px) {
+    form {
+        padding: 1rem;
+    }
+}
