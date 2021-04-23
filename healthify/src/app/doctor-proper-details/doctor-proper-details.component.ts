@@ -21,9 +21,7 @@ export class DoctorProperDetailsComponent implements OnInit {
       })
   }
   onSubmit() {
+    this.toggle = true
     this.enrolment.enroll(this.userModel)
-      .subscribe(data => console.log('success', data),
-      error => console.log('error', error)
-      )
   }
 }

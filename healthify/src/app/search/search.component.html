@@ -3,8 +3,8 @@
     <mat-label>Select Doctor</mat-label>
     <mat-select (selectionChange)="selectedCategory($event)">
       <mat-option [value]="'all'">Все</mat-option>
-      <mat-option *ngFor="let d of doctorCategory" [value]="d.category">
-        {{d.category}}
+      <mat-option *ngFor="let d of doctorCategory" [value]="d">
+        {{d}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -12,8 +12,8 @@
     <mat-label>City</mat-label>
     <mat-select (selectionChange)="selectedCity($event)">
       <mat-option [value]="'all'">Все</mat-option>
-      <mat-option *ngFor="let d of doctorCity" [value]="d.city">
-        {{d.city}}
+      <mat-option *ngFor="let d of doctorCity" [value]="d">
+        {{d}}
       </mat-option>
     </mat-select>
   </mat-form-field>

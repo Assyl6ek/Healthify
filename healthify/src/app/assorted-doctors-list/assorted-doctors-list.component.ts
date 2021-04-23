@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AssortedDoctorsListComponent implements OnInit {
   public doctors: any = []
-  title: any
+  title: any = ""
   constructor(private doctorService: DoctorService, private activeRoute: ActivatedRoute) { }
   ngOnInit(): void {
     this.activeRoute.params.subscribe(routeParams => {
@@ -18,11 +18,11 @@ export class AssortedDoctorsListComponent implements OnInit {
       if(routeParams.id == "all") category = ""; else category =  routeParams.id
       if(routeParams.id1 == "all") city = ""; else city = routeParams.id1
       if(category == "") this.title = "List of Doctors"
+      else this.title = this.doctors[0].category
     this.doctorService.getDoctors()
       .subscribe(data => {
         this.doctors = data.filter(o => (o.category).toLowerCase().includes(category) && o.city.toLowerCase().includes(city))
       })
     });
   }
-
 }

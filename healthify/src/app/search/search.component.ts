@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import { Router } from '@angular/router';
+import { IDoctor } from 'src/assets/interface/doctor';
 
 @Component({
   selector: 'app-search',
@@ -12,20 +13,27 @@ export class SearchComponent implements OnInit {
   category: string = 'all'
   public doctorCategory: any
   public doctorCity: any
+  public a: any
+  public citySet = new Set()
+  public categorySet = new Set()
   constructor(private doctorService: DoctorService, private router: Router) { }
   ngOnInit(): void {
     this.doctorService.getDoctors()
       .subscribe(data => {
-        this.doctorCity = Array.from(new Set(data.map(a => a.city)))
-        .map(city => {
-          return data.find(a => a.city === city)
-        })
-        this.doctorCategory = Array.from(new Set(data.map(a => a.category)))
-        .map(category => {
-          return data.find(a => a.category === category)
-        })
+        for(let i = 0; i < data.length - 1; i++){
+          this.citySet.add(data[i].city)
+        }
+        this.doctorCity = Array.from(this.citySet)
+
+
+        for(let i = 0; i < data.length - 1; i++){
+          this.categorySet.add(data[i].category)
+        }
+        this.doctorCategory = Array.from(this.categorySet)
+
       })
   }
+
   onChangePath() {
     this.router.navigate(['doctors', this.category, this.city])
     console.log(this.category, this.city)
@@ -33,12 +41,9 @@ export class SearchComponent implements OnInit {
 
   selectedCity(event: any) {
     this.city = event.value.toLowerCase()
-
   }
   selectedCategory(event: any) {
     this.category = event.value.toLowerCase()
   }
-
-
 }
 

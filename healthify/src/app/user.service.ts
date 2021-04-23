@@ -10,8 +10,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
   login(user: User) :Observable<User> {
     return this.http.post<User>(this._url + 'login', user)
-  } 
+  }
   register(user: User) :Observable<User> {
     return this.http.post<User>(this._url + 'register', user)
-  }   
+  }
 }
