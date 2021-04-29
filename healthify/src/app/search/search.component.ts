@@ -21,13 +21,13 @@ export class SearchComponent implements OnInit {
     this.doctorService.getDoctors()
       .subscribe(data => {
         for(let i = 0; i < data.length - 1; i++){
-          this.citySet.add(data[i].city)
+          this.citySet.add(data[i].city.name)
         }
         this.doctorCity = Array.from(this.citySet)
 
 
         for(let i = 0; i < data.length - 1; i++){
-          this.categorySet.add(data[i].category)
+          this.categorySet.add(data[i].category.name)
         }
         this.doctorCategory = Array.from(this.categorySet)
 
