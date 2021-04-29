@@ -1,5 +1,9 @@
+from django.contrib.auth.hashers import BCryptSHA256PasswordHasher
 from rest_framework import serializers
 from api import models
+from django.contrib.auth.models import User
+
+
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.City
@@ -18,6 +22,21 @@ class DoctorSerializer(serializers.Serializer):
     price = serializers.FloatField()
     category = CategorySerializer()
     city = CitySerializer()
+
+class RegisterSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+    encoder = BCryptSHA256PasswordHasher()
+
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'last_name', 'first_name')
+
+    def create(self, validated_data):
+        password = validated_data.pop('password')
+        hashed_password = self.encoder.encode(password, salt=self.encoder.salt())
+        user = User.objects.create(password=hashed_password, **validated_data)
+        user.save()
+        return user
 
 class EnrollmentSerializer(serializers.Serializer):
     firstname = serializers.CharField()

@@ -1,9 +1,12 @@
 from django.shortcuts import render
 # Create your views here.
+from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
+from django.contrib.auth.models import User
 
-from api.serializers import CitySerializer, CategorySerializer, DoctorSerializer, EnrollmentSerializer
+from api.serializers import CitySerializer, CategorySerializer, DoctorSerializer, EnrollmentSerializer, \
+    RegisterSerializer
 from api.models import Category, City, Doctor, Enrollment
 
 from django.http.response import JsonResponse
@@ -79,3 +82,7 @@ class EnrollmentView(APIView):
             doctor = doctor
         )
         return JsonResponse(EnrollmentSerializer(enroll).data, safe=False)
+
+class Register(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer

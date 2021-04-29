@@ -4,14 +4,14 @@
             <div class="li_login__title">Log in</div>
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" name="email" [(ngModel)]="userLoginModel.email">
+                <input matInput type="email" name="email" [(ngModel)]="loginEmail">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Пароль</mat-label>
-                <input matInput type="password" name="password" [(ngModel)]="userLoginModel.password">
+                <input matInput type="password" name="password" [(ngModel)]="loginPassword">
             </mat-form-field>
             <div class="li_login__submit">
-                <button mat-flat-button color="primary" (click)="onLogin()">Войти</button>
+                <button mat-flat-button color="primary" (click)="onAuth()">Войти</button>
             </div>
         </form>
     </div>
@@ -20,19 +20,19 @@
             <div class="li_login__title">Sing up</div>
             <mat-form-field class="example-full-width">
                 <mat-label>Имя</mat-label>
-                <input matInput type="email" name="name" [(ngModel)]="userRegisterModel.name">
+                <input matInput type="email" name="name" [(ngModel)]="name">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Фамилия</mat-label>
-                <input matInput type="email" name="surname" [(ngModel)]="userRegisterModel.surname">
+                <input matInput type="email" name="surname" [(ngModel)]="surname">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" name="email" [(ngModel)]="userRegisterModel.email">
+                <input matInput type="email" name="email" [(ngModel)]="email">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Пароль</mat-label>
-                <input matInput type="password" name="password" [(ngModel)]="userRegisterModel.password">
+                <input matInput type="password" name="password" [(ngModel)]="password">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Подтвердить пароль</mat-label>

@@ -9,7 +9,7 @@ import { EnrolmentService } from '../enrolment.service';
   styleUrls: ['./doctor-proper-details.component.css']
 })
 export class DoctorProperDetailsComponent implements OnInit {
-  userModel = new User('', '', '', '', '', '')
+  userModel = new User('', '', '', '', '', '', '')
   public toggle: boolean = false
   public doctor: any
   public id = this.route.snapshot.paramMap.get('doctor_id')
