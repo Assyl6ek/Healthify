@@ -6,10 +6,10 @@ import { IDoctor } from 'src/assets/interface/doctor';
   providedIn: 'root'
 })
 export class DoctorService {
-  private url: string = "assets/data/doctors.json"
+  private url: string = "http://127.0.0.1:8000/api/"
   constructor(private http: HttpClient) { }
   getDoctors(): Observable<IDoctor[]> {
-    return this.http.get<IDoctor[]>(this.url)
+    return this.http.get<IDoctor[]>(this.url + 'doctors/')
   }
 }
 

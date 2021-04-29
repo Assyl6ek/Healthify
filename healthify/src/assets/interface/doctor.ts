@@ -1,9 +1,12 @@
+import { ICity } from './city';
+import { ICategory } from './category';
+
 export interface IDoctor {
   id: string,
-  city: string,
-  category: string,
+  city: ICity,
+  category: ICategory,
   name: string,
   experience: string,
   price: string,
-  image: string
+  imageURL: string
 }

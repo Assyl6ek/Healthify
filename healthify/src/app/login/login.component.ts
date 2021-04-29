@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '../user'
 import { UserService } from '../user.service';
 @Component({
@@ -12,17 +13,20 @@ export class LoginComponent implements OnInit {
   password2 = ''
   loginErrors: any = []
   registerErrors: any = []
-  constructor(public userService: UserService) { }
+  constructor(public userService: UserService, private router: Router) { }
   ngOnInit(): void {
   }
+
   onLogin(): void {
-    let { email, password } = this.userLoginModel
-    const user = {
-      email,
-      password
-    }
-    // this.userService.login(this.userLoginModel)
-    console.log(user)
+
+    this.userService.login(this.userLoginModel).subscribe(
+      res => {
+        localStorage.setItem('token', res.name)
+        this.userLoginModel.email = ''
+        this.userLoginModel.password = ''
+        this.router.navigate(['/main'])
+      }
+    )
   }
   onRegister(): void {
     let { email, name, surname, password } = this.userRegisterModel

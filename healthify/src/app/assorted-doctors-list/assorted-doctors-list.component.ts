@@ -30,7 +30,7 @@ export class AssortedDoctorsListComponent implements OnInit {
           city = routeParams.id1
           this.doctorService.getDoctors()
           .subscribe(data => {
-            this.doctors = data.filter(o => o.city.toLowerCase().includes(city))
+            this.doctors = data.filter(o => o.city.name.toLowerCase().includes(city))
           })
         }
         else if(routeParams.id1 == 'all'){
@@ -38,14 +38,14 @@ export class AssortedDoctorsListComponent implements OnInit {
           category = routeParams.id
           this.doctorService.getDoctors()
           .subscribe(data => {
-            this.doctors = data.filter(o => o.category.toLowerCase().includes(category))
+            this.doctors = data.filter(o => o.category.name.toLowerCase().includes(category))
           })
         }
         else {
           category = routeParams.id; city = routeParams.id1
           this.doctorService.getDoctors()
           .subscribe(data => {
-            this.doctors = data.filter(o => o.category.toLowerCase().includes(category) && o.city.toLowerCase().includes(city))
+            this.doctors = data.filter(o => o.category.name.toLowerCase().includes(category) && o.city.name.toLowerCase().includes(city))
           })
         }
 

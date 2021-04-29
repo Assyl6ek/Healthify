@@ -5,9 +5,9 @@ import { User} from './user'
   providedIn: 'root'
 })
 export class EnrolmentService {
-  public _url = ''
+  public _url = 'http://localhost:8000/'
   constructor(private http: HttpClient) { }
   enroll(user: User) {
-    this.http.post<any>(this._url, user)
+    this.http.post<any>(this._url + 'enroll', user)
   }
 }
