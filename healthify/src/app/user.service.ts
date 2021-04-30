@@ -14,4 +14,8 @@ export class UserService {
   register(username: string, password: string, last_name: string, first_name: string) :Observable<User> {
     return this.http.post<User>(this._url + 'register/', {username, password, last_name, first_name})
   }
+  isAdmin(username: string) :Observable<any> {
+    return this.http.post<any>(this._url + 'admin/', username)
+    }
+
 }

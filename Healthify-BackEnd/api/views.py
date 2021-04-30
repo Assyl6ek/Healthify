@@ -21,6 +21,14 @@ def cities(request):
     categories = City.objects.all()
     return JsonResponse(CitySerializer(cities, many=True).data, safe=False)
 
+
+@api_view(['POST'])
+def isAdmin(request):
+    userCheck = User.objects.get(username=request.data['username'])
+    if userCheck.is_superuser == 1: return True
+    else: return False
+
+
 class Doctors(APIView):
     def get(self, request):
         doctors = Doctor.objects.all()
@@ -83,6 +91,9 @@ class EnrollmentView(APIView):
         )
         return JsonResponse(EnrollmentSerializer(enroll).data, safe=False)
 
+
 class Register(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
+
+# Enrollment.objects.filter(doctor_id = 1).delete()

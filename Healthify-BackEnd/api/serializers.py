@@ -3,16 +3,20 @@ from rest_framework import serializers
 from api import models
 from django.contrib.auth.models import User
 
+from api.models import Enrollment
+
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.City
         fields = 'id', 'name'
-        
+
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Category
         fields = 'id', 'name'        
+
 
 class DoctorSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=False)
@@ -22,6 +26,7 @@ class DoctorSerializer(serializers.Serializer):
     price = serializers.FloatField()
     category = CategorySerializer()
     city = CitySerializer()
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -38,6 +43,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+
 class EnrollmentSerializer(serializers.Serializer):
     firstname = serializers.CharField()
     phone = serializers.CharField()
@@ -45,7 +51,12 @@ class EnrollmentSerializer(serializers.Serializer):
     date = serializers.CharField()
     doctor = DoctorSerializer()
 
+
 class Manager(serializers.ModelSerializer):
     class Meta:
         model = models.Manager
         fields = 'id', 'username'
+
+
+
+

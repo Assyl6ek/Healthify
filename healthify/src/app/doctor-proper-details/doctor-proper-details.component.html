@@ -12,19 +12,19 @@
         <form #userForm="ngForm" (ngSubmit)="onSubmit()">
             <mat-form-field class="example-full-width">
                 <mat-label>Имя</mat-label>
-                <input matInput value="UserName" name="name" [(ngModel)]="userModel.name">
+                <input matInput value="UserName" name="name" [(ngModel)]="name">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Фамилия</mat-label>
-                <input matInput value="UserSurname" name="surname"[(ngModel)]="userModel.surname">
+                <input matInput value="UserSurname" name="surname"[(ngModel)]="surname">
             </mat-form-field>
             <mat-form-field class="example-full-width">
                 <mat-label>Номер телефона</mat-label>
-                <input matInput placeholder="+7 700 777 70 70" name="phone" [(ngModel)]="userModel.phone">
+                <input matInput placeholder="+7 700 777 70 70" name="phone" [(ngModel)]="phone">
             </mat-form-field>
             <mat-form-field>
                 <mat-label>Выбор даты</mat-label>
-                <input matInput [matDatepicker]="myDatepicker" name="date" [(ngModel)]="userModel.date">
+                <input matInput [matDatepicker]="myDatepicker" name="date" [(ngModel)]="date">
                 <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
                 <mat-datepicker #myDatepicker></mat-datepicker>
             </mat-form-field>
