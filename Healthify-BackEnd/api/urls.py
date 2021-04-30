@@ -12,5 +12,5 @@ urlpatterns = [
     path('doctors/<int:id>/', views.doctor_admin),
     path('login/', obtain_jwt_token),
     path('register/', Register.as_view()),
-    path('admin/', views.isAdmin)
+    path('admin/<str:key>', views.isAdmin)
 ]

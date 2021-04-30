@@ -1,5 +1,6 @@
 from django.shortcuts import render
 # Create your views here.
+from requests import Response
 from rest_framework import generics
 from rest_framework.decorators import api_view
 from rest_framework.views import APIView
@@ -22,11 +23,11 @@ def cities(request):
     return JsonResponse(CitySerializer(cities, many=True).data, safe=False)
 
 
-@api_view(['POST'])
-def isAdmin(request):
-    userCheck = User.objects.get(username=request.data['username'])
-    if userCheck.is_superuser == 1: return True
-    else: return False
+@api_view(['GET'])
+def isAdmin(request, key):
+    userCheck = User.objects.get(username=key)
+    if userCheck.is_superuser == 1: return JsonResponse(True, safe=False)
+    else: return JsonResponse(False, safe=False)
 
 
 class Doctors(APIView):

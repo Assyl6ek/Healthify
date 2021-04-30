@@ -41,22 +41,22 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', res.token);
         localStorage.setItem('name', this.loginEmail);
         this.logged = true;
-        this.loginEmail = '';
-        this.loginPassword = '';
-        this.router.navigate(['main/'])
-        alert('You logged in successfully!');
-        // this.userService.isAdmin(this.loginEmail).subscribe(res => {
-        //   alert('You logged in successfully!');
-        //   if(res == true){
-        //     this.router.navigate(['admin/'])
-        //   }
-        //   else{
-        //     this.router.navigate(['main/'])
-        //   }
-        //   this.loginEmail = '';
-        //   this.loginPassword = '';
-        // });
-
+        // this.loginEmail = '';
+        // this.loginPassword = '';
+        // this.router.navigate(['main/'])
+        // alert('You logged in successfully!');
+        this.userService.isAdmin(this.loginEmail).subscribe(res => {
+          console.log(res)
+          alert('You logged in successfully!');
+          if(res == true){
+            this.router.navigate(['admin/'])
+          }
+          else{
+            this.router.navigate(['main/'])
+          }
+          this.loginEmail = '';
+          this.loginPassword = '';
+        });
       });
     } else {
       alert('Wrong login or password! Try again!');
